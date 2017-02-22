@@ -1,0 +1,39 @@
+.main-nav{
+	position: relative;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	max-width: 1800px !important;
+	margin:0 auto;
+	@media screen and (max-width:1024px){
+		.left.nav,.right.nav{
+			display:none !important;
+		}
+	}
+	.nav{
+		a{
+			text-decoration: none !important;
+			border-bottom:0;
+			font-family: trajan-pro-3;
+		}
+		&.left{
+			width:125px;
+			text-align: left;
+			padding-left:1em;
+		}
+		&.middle{
+			max-width:600px !important;
+		}
+		&.right{
+			.socialaccountlinks-v2-block{
+				padding-top:0 !important;
+				padding-bottom:0 !important;
+			}
+			width:125px;
+			display:flex;
+			align-items:center;
+			justify-content:flex-end;
+		}
+	}
+}
+
