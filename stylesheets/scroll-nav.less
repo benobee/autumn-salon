@@ -8,6 +8,9 @@
 	z-index: -3;
 	height:50px;
 	transform: translateY(-100px) !important;
+	-webkit-transform: translateY(-100px) !important;
+	-moz-transform: translateY(-100px) !important;
+	-o-transform: translateY(-100px) !important;
 	border-bottom:2px solid #e5e5e5;
 	&:hover{
 		.sub-hover-nav{
@@ -86,7 +89,9 @@
 				padding-top:4px;
 				width:25%;
 			    display:flex;
+			    display:-webkit-flex;
 			    justify-content:flex-end;
+			    -webkit-justify-content:flex-end;
 			    margin-right:0.5em;
 			}
 		}

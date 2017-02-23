@@ -1,5 +1,9 @@
-import controller from './controller.js';
+import nav from './nav.js';
+import Events from './pubsub.js';
+import Element from './element.js';
 
 export {
-	controller
+	nav,
+	Events,
+	Element
 }
