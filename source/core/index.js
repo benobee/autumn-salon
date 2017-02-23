@@ -1,9 +1,9 @@
-import nav from './nav.js';
 import Events from './pubsub.js';
-import Element from './element.js';
+import Router from './router.js';
+import Template from './template.js';
 
 export {
-	nav,
 	Events,
-	Element
+	Router,
+	Template
 }

@@ -6,27 +6,31 @@
  *
  */
 
-import * as core from "./source/core/index.js";
-import * as api from "./source/api/index.js";
+import { Router, Template, Events } from "./source/core/index.js";
+import { nav } from "./source/modules/index.js";
+import * as collections from "./source/collections/index.js";
 
 class App_Build {
     constructor() {
-    	//expose
-    	this.core = core;
-    	this.sqs = SQS;
-    	this.api = api;
-
-    	//initialize modules
-    	this.init();
-
-    	console.log(this);
+    	this.collections();
+        this.core();
+        this.router();
+        this.modules();
     }
-    init() {
-    	//general scripts
-        core.nav.init();
+    collections() {
+        this.collections = collections;
 
-        //scripts relating to any collection
-        api.blog.init();
+        collections.blog.init();
+    }
+    core() {
+        this.events = Events;
+        this.template = Template;
+    }
+    router() {
+        Router.checkRoute();
+    }
+    modules() {
+        nav.init();
     }
 };
 

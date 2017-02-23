@@ -1,20 +1,19 @@
 import $ from 'jquery';
 import Util from '../util/util.js';
-import { Events, Element } from '../core/index.js';
+import { Router } from '../core/index.js';
 
 const blog = {
 	init() {
-		const queryParams = this.getQueryParameters();
+		//if on the blog list collection url execute script
+        Router.route('/aswritings', () => {
+			const queryParams = Util.getQueryParameters();
 
-		queryParams.format = "json";
+			queryParams.format = "json";
 
-		const initialData = Util.ajax('/aswritings', queryParams);
+			const initialData = Util.ajax('/aswritings', queryParams);
 
-		this.getData(initialData);
-
-	},
-	getQueryParameters(str) {
-		return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = n[1],this}.bind({}))[0];
+			this.getData(initialData);
+        });
 	},
 	appendPosts() {
 		if (!this.data.pagination) {
@@ -25,7 +24,7 @@ const blog = {
 
 		const categoryFilter = this.data.categoryFilter;
 
-		const queryParams = this.getQueryParameters();
+		const queryParams = Util.getQueryParameters();
 
 		queryParams.format = "json";
 
@@ -36,13 +35,20 @@ const blog = {
 				$.each(response.items, (i, item) => {
 
 					//main container returning elemnt
-					const container = Element.render('div', { class: 'collection-item hentry' });
-					const content = Element.render('div', { class: 'content' });
+					const container = document.createElement('div');
+
+					$(container).addClass('collection-item hentry');
+
+					const content = document.createElement('div');
+
+					$(content).addClass('content');
+
 					const mediaWrapper = '<a href="'+ item.fullUrl +'" class="media-wrapper"><div class="image" style="background-image:url(' + item.assetUrl + ');"></div></a>';
 					const meta = '<div class="meta"><div class="title"><a href="'+ item.fullUrl +'">' + item.title + '</a></div><div class="excerpt">' + item.excerpt + '</div></div>';
 
 					$(content).append(mediaWrapper);
 					$(content).append(meta);
+					
 					$(container).append(content);
 
 					$('#blog-list').append(container);
