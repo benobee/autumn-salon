@@ -1,3 +1,5 @@
+//collection item view
+
 .view-item.collection-type-blog{
     .like-icon{
       margin-right:0 !important;
@@ -68,7 +70,6 @@
 					width:50% !important;
 					.image{
 						height:30vw !important;
-						min-height:250px;
 					}
 				}
 			}
@@ -76,10 +77,10 @@
 				margin:0em;
 				width:25%;
 				.content{
-					margin:1em;
-					border-radius: 2px;
+					margin:0.25em;
+					border-radius: 3px;
 					overflow: hidden;
-					box-shadow: 1px 2px 4px #e2e2e2;
+					box-shadow: 1px 2px 20px #e2e2e2;
 					.media-wrapper{
 						&:hover{
 							opacity:0.5 !important;
@@ -90,16 +91,17 @@
 							-webkit-mask-image: -webkit-radial-gradient(circle, white, black);
 							opacity: inherit;
 							z-index:0;
-							height:15vw;
+							height:223px;
 							background-size: cover;
 							background-repeat: no-repeat;
-							background-position: center center;					
+							background-position: center center;				
 						}
 					}
 					.title{
 						padding:1em;
 						font-size:0.8em;
 						line-height: 1em;
+						min-height:30px;
 					}
 				}
 			}			
@@ -107,6 +109,7 @@
 	}
 }
 
+//main collection list view
 .collection-list{
 	display:flex;
     display:-webkit-flex;

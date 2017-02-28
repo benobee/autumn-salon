@@ -11,12 +11,15 @@
 	-webkit-transform: translateY(-100px) !important;
 	-moz-transform: translateY(-100px) !important;
 	-o-transform: translateY(-100px) !important;
-	border-bottom:2px solid #e5e5e5;
+	border-bottom:1px solid #c0c0c0;
 	&:hover{
 		.sub-hover-nav{
 			opacity: 1 !important;
 			visibility: visible !important;
-			transform:translateY(0px) !important;
+			transform:translateY(-1px) !important;
+			-webkit-transform:translateY(-1px) !important;
+			-moz-transform:translateY(-1px) !important;
+			-o-transform:translateY(-1px) !important;
 		}
 	}
 	@media screen and (max-width:639px){
@@ -51,6 +54,9 @@
 	}
 	&.scrolling-active{
 		transform: translateY(0px) !important;
+		-webkit-transform: translateY(0px) !important;
+		-moz-transform: translateY(0px) !important;
+		-o-transform: translateY(0px) !important;
 		z-index:999;
 	}
 	.scroll-nav-wrapper{
@@ -125,7 +131,7 @@
         -webkit-transform:translateY(-15px);
         -moz-transform:translateY(-15px);
         -o-transform:translateY(-15px);
-		border-bottom:2px solid #e5e5e5;
+		border-bottom:1px solid #c0c0c0;
 		margin-bottom:40px;
 		background:white;
 		@media screen and (max-width:1024px) {
@@ -178,6 +184,9 @@
 						visibility: visible !important;
 						height:100% !important;
 						transform:translateY(-5px) !important;
+						-webkit-transform:translateY(-5px) !important;
+						-moz-transform:translateY(-5px) !important;
+						-o-transform:translateY(-5px) !important;
 					}
 				}
 				.subnav{
