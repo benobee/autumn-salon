@@ -19,7 +19,7 @@ const nav = {
 
 		//scroll down to trigger scrolling nav
 		$(window).bind('scroll load', () => {
-			const top = $('body').scrollTop();
+			const top = $(window).scrollTop();
 
 			const target = $('#scroll-nav');
 

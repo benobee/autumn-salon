@@ -4,6 +4,12 @@ import { Router } from '../core/index.js';
 
 const blog = {
 	init() {
+		const blog = $('#blog');
+
+		if (blog.length !== 0) {
+			this.socialSharing();
+		}
+
 		//if on the blog list collection url execute script
         Router.route('/aswritings', () => {
 			const queryParams = Util.getQueryParameters();
@@ -14,6 +20,17 @@ const blog = {
 
 			this.getData(initialData);
         });
+	},
+	socialSharing() {
+		$(window).bind("scroll top", () => {
+			const top = $(window).scrollTop();
+
+			if (top >= 1200) {
+				$('.social-share').addClass('scrolling');
+			} else {
+				$('.social-share').removeClass('scrolling');
+			}
+		});
 	},
 	appendPosts() {
 		if (!this.data.pagination) {
@@ -75,7 +92,7 @@ const blog = {
 		$(window).bind("load scroll", (e) => {
 			const elementBottom = $collectionList.position().top + $collectionList.outerHeight(true);
 
-			const top = $('body').scrollTop() + 900;
+			const top = $(window).scrollTop() + 900;
 
 			if (elementBottom <= top) {
 				if (this.activeScroll) {

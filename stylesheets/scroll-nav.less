@@ -64,13 +64,27 @@
 			&.left{
 				display: inline-block;
 				width:25%;
-				min-width: 75px;
+				min-width: 80px;
+				svg{
+					height:20px;
+					width:20px;
+					fill:#2d2d2d;
+					transform: translateY(2px) !important;
+					-webkit-transform: translateY(2px) !important;
+					-moz-transform: translateY(2px) !important;
+					-o-transform: translateY(2px) !important;
+				}
 				.menu-toggle{
-					font-size:12px;
+					font-size:11px;
+					color:#2d2d2d;
 					&:after{
 						content: "/";
 					}
 				}
+              	opacity:1 !important;
+              	i{
+              		color:#2d2d2d;
+              	}
 			}
 			&.logo{
 				width:50%;
@@ -93,6 +107,7 @@
 			    justify-content:flex-end;
 			    -webkit-justify-content:flex-end;
 			    margin-right:0.5em;
+                opacity:1;
 			}
 		}
 
@@ -100,12 +115,16 @@
 	.sub-hover-nav{
 		opacity:0;
 		visibility: hidden;
-		background:none;
+		background-color:none;
 		margin-top:6px;
 		height:50px;
 		width:100%;
 		transition:0.6s;
+        -webkit-transition:0.6s;
 		transform:translateY(-15px);
+        -webkit-transform:translateY(-15px);
+        -moz-transform:translateY(-15px);
+        -o-transform:translateY(-15px);
 		border-bottom:2px solid #e5e5e5;
 		margin-bottom:40px;
 		background:white;
@@ -117,10 +136,16 @@
 			visibility: visible;
 			display:block;
 			transform:translateY(0px);
+            -webkit-transform:translateY(0px);
+            -moz-transform:translateY(0px);
+            -o-transform:translateY(0px);
 			.nav-wrapper{
 				display:flex !important;
+                display:-wekit-flex !important;
 				flex-direction:column !important;
+                -webkit-flex-direction:column !important;
 				align-items:center;
+                -webkit-align-items:center;
 				height:80%;
 			}
 		}
@@ -129,7 +154,9 @@
 		}
 		.nav-wrapper{
 			display: flex;
+            display:-webkit-flex;
 			justify-content:center;
+            -webkit-justify-content:center;
 			padding-top:10px;
 			li{
 				font-family: trajan-pro-3;
@@ -159,6 +186,9 @@
 					border-radius: 5px;
 					visibility: hidden;
 					transform:translateY(-10px);
+                    -webkit-transform:translateY(-10px);
+                    -moz-transform:translateY(-10px);
+                    -o-transform:translateY(-10px);
 					margin-top:45px;
 					position: absolute;
 					top:0px;

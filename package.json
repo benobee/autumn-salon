@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@squarespace/toolbelt": "^0.7.10",
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -24,7 +25,6 @@
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "mustache": "^2.3.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
@@ -34,8 +34,6 @@
     "babel-preset-react": "^6.11.1",
     "es6-promise": "^3.2.1",
     "gsap": "^1.19.1",
-    "jquery": "^3.1.1",
-    "mustache": "^2.3.0",
-    "owl.carousel": "^2.2.0"
+    "jquery": "^3.1.1"
   }
 }
