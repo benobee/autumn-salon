@@ -17,7 +17,7 @@ class App_Build {
         this.router();
         this.modules();
     }
-    collections() {
+    collections(props) {
         this.collections = collections;
 
         collections.blog.init();
@@ -29,11 +29,11 @@ class App_Build {
     router() {
         Router.checkRoute();
     }
-    modules() {
+    modules(props) {
         nav.init();
     }
 };
 
 const App = new App_Build();
 
-
+export default App;

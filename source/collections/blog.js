@@ -8,6 +8,7 @@ const blog = {
 
 		if (blog.length !== 0) {
 			this.socialSharing();
+			this.trimRelatedPosts();
 		}
 
 		//if on the blog list collection url execute script
@@ -32,6 +33,32 @@ const blog = {
 			}
 		});
 	},
+    trimRelatedPosts() {
+    	const articleId = $('article').data('item-id');
+
+    	let array = $('.related-list .collection-item.hentry').toArray();
+
+     	$('.related-list').html('');
+
+     	array = array.map( (item, i) => {
+     		const relatedId = $(item).data('item-id');
+
+     		if (relatedId === articleId) {
+     			item.parent = true;
+     		}
+
+  			if (!item.parent) {
+  				return item; 
+  			}
+     		
+     	});
+
+     	array = array.slice(0,4);
+
+	    $.each(array, (i, item) => {
+	     	$('.related-list').append(item);
+	    });
+    },
 	appendPosts() {
 		if (!this.data.pagination) {
 			return false;
